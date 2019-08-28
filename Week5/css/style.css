@@ -3,7 +3,7 @@ h1 {
 }
 
 body {
-    background-color: burlywood
+    background-color: white
 }
 
 a {
@@ -19,5 +19,5 @@ table {
 table, th, td {
     border: 10px solid rgb(236, 236, 226);
     width: 50%;
-    color:black;
+    color: black;
 }
