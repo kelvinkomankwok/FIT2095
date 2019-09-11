@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <h1>Task List</h1>
+    </body>
+
+    <table>
+        <tr>
+            <th>Task ID</th>
+            <th>Name</th>
+            <th>Assign To (Dev ID)</th>
+            <th>Due Date</th>
+            <th>Status</th>
+            <th>Description</th>
+        </tr>
+
+        <% for (let i = 0; i < taskList.length; i++){ %>
+        <tr>
+            <td>
+                <%= taskList[i]._id %>
+            </td>
+            <td>
+                <%= taskList[i].name %>
+            </td>
+            <td>
+                <%= taskList[i].assignTo %>
+            </td>
+            <td>
+                <%= taskList[i].dueDate %>
+            </td>
+            <td>
+                <%= taskList[i].status %>
+            </td>
+            <td>
+                <%= taskList[i].description %>
+            </td>
+        </tr>
+        <% } %>
+
+    </table>
+    <br>
+    <a href="/">Home</a>
+</html>

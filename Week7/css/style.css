@@ -1,0 +1,23 @@
+h1 {
+    color: red
+}
+
+body {
+    background-color: white
+}
+
+a {
+    font-size: 30px;
+    padding: 10px;
+    color:black;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 10px solid rgb(236, 236, 226);
+    width: 50%;
+    color: black;
+}
