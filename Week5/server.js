@@ -10,7 +10,7 @@ app.set("view engine", "html");
 
 //static assets
 app.use(express.static("css"));
-app.use(express.static("images"));
+// app.use(express.static("images"));
 
 app.use(bodyParser.urlencoded({
     extended: false
