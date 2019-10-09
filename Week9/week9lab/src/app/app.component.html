@@ -1,0 +1,66 @@
+<div class="form-group">
+    <label for="bookTitle">Book Title</label>
+    <input class="form-control" name="bookTitle" id="booktitle" [(ngModel)]="bookTitle" placeholder="Your Title Here"/>
+</div>
+
+<div class="form-group">
+    <label for="pubDate">Publication Date</label>
+    <input class="form-control" name="pubDate" id="pubDate" [(ngModel)]="pubDate" type="date"/>
+</div>
+
+<div class="form-group">
+    <label for="bookType">Select Book Type</label>
+    <select class="form-control" name="bookType" id="bookType" [(ngModel)]="bookType">
+      <option value = "Hard Cover">Hard Cover</option>
+      <option value = "Paper Black">Paper Black</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="bookSummary">Book Summary</label>
+    <input class="form-control" name="bookSummary" id="bookSummary" [(ngModel)]="bookSummary" type="text"/>
+</div>
+
+<div class="form-group">
+    <label for="delBook">Number of book deleted</label>
+    <input class="form-control" name="delBook" id="delBook" [(ngModel)]="delBook" type="number"/>
+</div>
+
+<div class="btn-group">
+  <button class="btn btn-primary" (click)="addBook()">Save Book {{database.length}}</button>
+  <button *ngIf="countHardCover() == 0" class="btn btn-warning" disabled>
+      Delete Hard Cover 0
+  </button>
+  <button *ngIf="countHardCover() > 0" class="btn btn-warning" (click)="deleteHardCover()">
+      Delete Hard Cover {{countHardCover()}}
+  </button>
+  <button class="btn btn-danger" (click)="deleteNBook(delBook)">
+      Delete {{delBook}}
+  </button>
+</div>
+<br>
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Publication Date</th>
+        <th scope="col">Type</th>
+        <th scope="col">Summary</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of database; let i = index">
+        <th scope="row">{{i + 1}}</th>
+        <td>{{database[i].bookTitle}}</td>
+        <td>{{database[i].pubDate}}</td>
+        <td>{{database[i].bookType}}</td>
+        <td>{{database[i].bookSummary}}</td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteBook(i)">Delete Book</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
